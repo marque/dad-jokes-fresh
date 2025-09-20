@@ -1,0 +1,26 @@
+{
+  "name": "daily-dad-jokes",
+  "version": "1.0.0",
+  "description": "A fresh, clean dad jokes website with AI-generated images",
+  "main": "index.html",
+  "dependencies": {
+    "google-auth-library": "^9.0.0"
+  },
+  "scripts": {
+    "dev": "vercel dev",
+    "build": "echo 'Static site - no build needed'",
+    "start": "vercel dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marque/dad-jokes-fresh.git"
+  },
+  "keywords": [
+    "dad-jokes",
+    "humor",
+    "ai-images",
+    "vercel"
+  ],
+  "author": "Mark",
+  "license": "MIT"
+}

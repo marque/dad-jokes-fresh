@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Dad Jokes - Your Daily Dose of Humor</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            max-width: 800px;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .joke-section {
+            padding: 40px;
+            text-align: center;
+        }
+
+        .joke-container {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 20px 0;
+            border-left: 5px solid #667eea;
+        }
+
+        .joke-text {
+            font-size: 1.4rem;
+            line-height: 1.6;
+            color: #333;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .joke-meta {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .btn {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn:hover {
+            background: #5a6fd8;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .btn.secondary {
+            background: #28a745;
+        }
+
+        .btn.secondary:hover {
+            background: #218838;
+        }
+
+        .image-section {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .joke-image {
+            max-width: 100%;
+            height: 300px;
+            width: 300px;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            display: none;
+        }
+
+        .image-placeholder {
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(45deg, #f0f2f5, #e9ecef);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        .loading {
+            color: #667eea;
+            font-weight: 500;
+        }
+
+        .footer {
+            background: #f8f9fa;
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            border-top: 1px solid #dee2e6;
+        }
+
+        @media (max-width: 600px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .joke-text {
+                font-size: 1.2rem;
+            }
+
+            .buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 200px;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>😂 Daily Dad Jokes</h1>
+            <p>Your daily dose of groan-worthy humor!</p>
+        </div>
+
+        <div class="joke-section">
+            <div class="joke-container">
+                <div class="joke-meta" id="joke-date">
+                    📅 Today's Featured Joke
+                </div>
+
+                <div class="joke-text" id="joke-text">
+                    Why don't scientists trust atoms? Because they make up everything!
+                </div>
+
+                <div class="image-section">
+                    <img id="joke-image" class="joke-image" alt="AI-generated illustration">
+                    <div id="image-placeholder" class="image-placeholder">
+                        🎨 Click "Generate Image" for AI illustration
+                    </div>
+                </div>
+
+                <div class="buttons">
+                    <button class="btn" onclick="getNewJoke()">
+                        🎲 New Joke
+                    </button>
+                    <button class="btn secondary" onclick="generateImage()">
+                        🎨 Generate Image
+                    </button>
+                    <button class="btn" onclick="shareJoke()">
+                        📤 Share
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>Made with ❤️ for lovers of questionable humor</p>
+            <p><small>© 2025 Daily Dad Jokes</small></p>
+        </div>
+    </div>
+
+    <script>
+        const jokes = [
+            "Why don't scientists trust atoms? Because they make up everything!",
+            "I told my wife she was drawing her eyebrows too high. She looked surprised.",
+            "Why don't eggs tell jokes? They'd crack each other up!",
+            "What do you call a fish wearing a crown? A king fish!",
+            "Why did the scarecrow win an award? He was outstanding in his field!",
+            "What do you call a bear with no teeth? A gummy bear!",
+            "Why don't skeletons fight each other? They don't have the guts!",
+            "What's the best thing about Switzerland? I don't know, but the flag is a big plus!",
+            "Why don't scientists trust stairs? Because they're always up to something!",
+            "What do you call a fake noodle? An impasta!",
+            "Why did the math book look so sad? Because it was full of problems!",
+            "What do you call a sleeping bull? A bulldozer!",
+            "Why don't eggs ever win at poker? They always fold!",
+            "What did the ocean say to the beach? Nothing, it just waved!",
+            "Why did the coffee file a police report? It got mugged!"
+        ];
+
+        let currentJoke = jokes[0];
+
+        function getNewJoke() {
+            const randomIndex = Math.floor(Math.random() * jokes.length);
+            currentJoke = jokes[randomIndex];
+            document.getElementById('joke-text').textContent = currentJoke;
+
+            // Reset image
+            document.getElementById('joke-image').style.display = 'none';
+            document.getElementById('image-placeholder').style.display = 'flex';
+            document.getElementById('image-placeholder').textContent = '🎨 Click "Generate Image" for AI illustration';
+        }
+
+        async function generateImage() {
+            const placeholder = document.getElementById('image-placeholder');
+            const image = document.getElementById('joke-image');
+
+            placeholder.textContent = '🎨 Generating AI image...';
+            placeholder.className = 'image-placeholder loading';
+
+            try {
+                const response = await fetch('/api/generate-image', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        prompt: currentJoke
+                    })
+                });
+
+                const result = await response.json();
+
+                if (result.success && result.imageUrl) {
+                    image.src = result.imageUrl;
+                    image.style.display = 'block';
+                    placeholder.style.display = 'none';
+                } else {
+                    throw new Error(result.error || 'Failed to generate image');
+                }
+            } catch (error) {
+                console.error('Image generation failed:', error);
+                placeholder.textContent = '❌ Image generation failed. Try again!';
+                placeholder.className = 'image-placeholder';
+            }
+        }
+
+        function shareJoke() {
+            const shareText = `${currentJoke}\n\nFrom Daily Dad Jokes - Your daily dose of humor!`;
+
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Daily Dad Joke',
+                    text: shareText,
+                    url: window.location.href
+                });
+            } else if (navigator.clipboard) {
+                navigator.clipboard.writeText(shareText).then(() => {
+                    alert('Joke copied to clipboard!');
+                });
+            } else {
+                // Fallback for older browsers
+                const textArea = document.createElement('textarea');
+                textArea.value = shareText;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                alert('Joke copied to clipboard!');
+            }
+        }
+
+        // Initialize with today's date
+        document.getElementById('joke-date').textContent = `📅 ${new Date().toLocaleDateString('en-US', {
+            weekday: 'long',
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        })}`;
+    </script>
+</body>
+</html>
