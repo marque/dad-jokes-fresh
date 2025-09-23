@@ -1,26 +1,22 @@
 {
-  "name": "daily-dad-jokes",
+  "name": "daily-jokes-website",
   "version": "1.0.0",
-  "description": "A fresh, clean dad jokes website with AI-generated images",
-  "main": "index.html",
-  "dependencies": {
-    "google-auth-library": "^9.0.0"
-  },
+  "description": "Daily dad jokes with AI-generated images",
+  "main": "server.js",
   "scripts": {
-    "dev": "vercel dev",
-    "build": "echo 'Static site - no build needed'",
-    "start": "vercel dev"
+    "dev": "node server.js",
+    "start": "node server.js",
+    "test-image": "node test-image-generation.js",
+    "generate-jokes": "node scripts/generate-batch.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/marque/dad-jokes-fresh.git"
+  "dependencies": {
+    "google-auth-library": "^9.0.0",
+    "googleapis": "^128.0.0"
   },
-  "keywords": [
-    "dad-jokes",
-    "humor",
-    "ai-images",
-    "vercel"
-  ],
-  "author": "Mark",
-  "license": "MIT"
+  "devDependencies": {
+    "dotenv": "^16.3.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
 }

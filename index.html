@@ -3,17 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dad Jokes</title>
+    <title>Daily Jokes</title>
     <style>
-        body {
-            font-family: 'Arial', sans-serif;
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             min-height: 100vh;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             display: flex;
             justify-content: center;
             align-items: center;
+            padding: 20px;
         }
 
         .container {
@@ -21,202 +26,289 @@
             border-radius: 20px;
             padding: 40px;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            max-width: 600px;
+            max-width: 500px;
+            width: 100%;
             text-align: center;
         }
 
-        h1 {
-            color: #333;
+        .header {
             margin-bottom: 30px;
-            font-size: 2.5em;
         }
 
-        .joke {
-            font-size: 1.3em;
-            line-height: 1.6;
-            color: #555;
-            background: #f8f9fa;
-            padding: 30px;
-            border-radius: 15px;
-            border-left: 5px solid #667eea;
-            margin: 20px 0;
+        .title {
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 10px;
+            font-weight: 700;
         }
 
-        .setup {
-            font-weight: bold;
-            margin-bottom: 15px;
+        .date-display {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
         }
 
-        .punchline {
-            font-style: italic;
-            color: #764ba2;
+        .image-container {
+            margin: 30px 0;
+            min-height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .joke-image {
             max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-            margin: 20px 0;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            max-height: 300px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-placeholder {
+            width: 200px;
+            height: 200px;
+            background: #f8f9fa;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 3rem;
+        }
+
+        .joke-container {
+            margin: 30px 0;
+            padding: 25px;
+            background: #f8f9fa;
+            border-radius: 15px;
+            border-left: 4px solid #667eea;
+        }
+
+        .joke-text {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color: #333;
+            font-weight: 500;
         }
 
         .navigation {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
             margin-top: 30px;
+            flex-wrap: wrap;
         }
 
         .nav-btn {
             background: #667eea;
             color: white;
             border: none;
-            padding: 12px 24px;
-            margin: 0 10px;
+            padding: 12px 20px;
             border-radius: 25px;
+            font-size: 0.95rem;
+            font-weight: 500;
             cursor: pointer;
-            font-size: 16px;
             transition: all 0.3s ease;
+            min-width: 120px;
         }
 
-        .nav-btn:hover {
-            background: #764ba2;
+        .nav-btn:hover:not(:disabled) {
+            background: #5a67d8;
             transform: translateY(-2px);
         }
 
-        .date-display {
-            color: #666;
-            font-size: 0.9em;
-            margin-bottom: 20px;
+        .nav-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .nav-btn.active {
+            background: #764ba2;
         }
 
         .loading {
             color: #999;
             font-style: italic;
         }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 30px 20px;
+            }
+
+            .title {
+                font-size: 1.5rem;
+            }
+
+            .joke-text {
+                font-size: 1.1rem;
+            }
+
+            .navigation {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .nav-btn {
+                width: 100%;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>🎭 Dad Jokes Daily</h1>
-        <div class="date-display" id="date-display">Loading...</div>
+        <div class="header">
+            <h1 class="title">Daily Jokes</h1>
+            <div class="date-display" id="date-display">Loading...</div>
+        </div>
 
-        <img id="joke-image" class="joke-image" style="display: none;" alt="Joke illustration">
+        <div class="image-container">
+            <img id="joke-image" class="joke-image" style="display: none;" alt="Joke illustration">
+            <div id="image-placeholder" class="image-placeholder">🎭</div>
+        </div>
 
-        <div class="joke">
-            <div class="setup" id="joke-content">Loading your daily dad joke...</div>
+        <div class="joke-container">
+            <div class="joke-text" id="joke-text">Loading your daily joke...</div>
         </div>
 
         <div class="navigation">
+            <button class="nav-btn" id="today-btn">Today</button>
             <button class="nav-btn" id="prev-btn">← Previous Day</button>
-            <button class="nav-btn" id="next-btn">Next Day →</button>
+            <button class="nav-btn" id="random-btn">🎲 Random Day</button>
         </div>
     </div>
 
     <script>
-        class DadJokeApp {
+        class JokeManager {
             constructor() {
-                this.jokeContent = document.getElementById('joke-content');
+                this.jokeText = document.getElementById('joke-text');
                 this.jokeImage = document.getElementById('joke-image');
+                this.imagePlaceholder = document.getElementById('image-placeholder');
                 this.dateDisplay = document.getElementById('date-display');
+                this.todayBtn = document.getElementById('today-btn');
                 this.prevBtn = document.getElementById('prev-btn');
-                this.nextBtn = document.getElementById('next-btn');
+                this.randomBtn = document.getElementById('random-btn');
 
-                this.currentDayOffset = 0; // 0 = today, 1 = yesterday, etc.
-                this.dailyJokes = null;
+                this.jokes = null;
+                this.currentJoke = null;
+                this.isToday = true;
 
                 this.init();
             }
 
-            init() {
-                this.prevBtn.addEventListener('click', () => this.previousDay());
-                this.nextBtn.addEventListener('click', () => this.nextDay());
-                this.loadDailyJokes();
+            async init() {
+                this.setupEventListeners();
+                await this.loadJokes();
+                this.showTodaysJoke();
             }
 
-            async loadDailyJokes() {
+            setupEventListeners() {
+                this.todayBtn.addEventListener('click', () => this.showTodaysJoke());
+                this.prevBtn.addEventListener('click', () => this.showPreviousJoke());
+                this.randomBtn.addEventListener('click', () => this.showRandomJoke());
+            }
+
+            async loadJokes() {
                 try {
                     const response = await fetch('/api/daily-jokes');
-                    this.dailyJokes = await response.json();
-                    this.loadTodaysJoke();
+                    const data = await response.json();
+                    this.jokes = data.jokes || [];
                 } catch (error) {
                     console.error('Error loading jokes:', error);
-                    // Fallback to hardcoded joke
-                    this.dailyJokes = {
-                        jokes: [{
-                            date: new Date().toISOString().split('T')[0],
-                            joke: "Why don't scientists trust atoms? Because they make up everything!",
-                            image: "",
-                            category: "science"
-                        }]
-                    };
-                    this.loadTodaysJoke();
+                    this.jokes = [{
+                        date: new Date().toISOString().split('T')[0],
+                        joke: "Why don't scientists trust atoms? Because they make up everything!",
+                        image: "",
+                        category: "science"
+                    }];
                 }
             }
 
-            loadTodaysJoke() {
-                const today = new Date();
-                const targetDate = new Date(today);
-                targetDate.setDate(targetDate.getDate() - this.currentDayOffset);
-
-                const dateString = targetDate.toISOString().split('T')[0];
-                const todayJoke = this.dailyJokes.jokes.find(joke => joke.date === dateString);
+            showTodaysJoke() {
+                const today = this.getTodayET();
+                const todayJoke = this.jokes.find(joke => joke.date === today);
 
                 if (todayJoke) {
-                    this.displayJoke(todayJoke, targetDate);
+                    this.displayJoke(todayJoke, new Date());
+                    this.isToday = true;
                 } else {
-                    // Fallback to first available joke
-                    const fallbackJoke = this.dailyJokes.jokes[0];
-                    if (fallbackJoke) {
-                        this.displayJoke(fallbackJoke, new Date(fallbackJoke.date));
-                    }
+                    this.displayJoke(this.jokes[0], new Date(this.jokes[0].date));
+                    this.isToday = false;
                 }
+
+                this.updateButtonStates();
+            }
+
+            showPreviousJoke() {
+                if (!this.currentJoke) return;
+
+                const currentDate = new Date(this.currentJoke.date);
+                currentDate.setDate(currentDate.getDate() - 1);
+                const prevDateString = currentDate.toISOString().split('T')[0];
+
+                const prevJoke = this.jokes.find(joke => joke.date === prevDateString);
+                if (prevJoke) {
+                    this.displayJoke(prevJoke, currentDate);
+                    this.isToday = false;
+                    this.updateButtonStates();
+                }
+            }
+
+            showRandomJoke() {
+                if (this.jokes.length === 0) return;
+
+                const randomIndex = Math.floor(Math.random() * this.jokes.length);
+                const randomJoke = this.jokes[randomIndex];
+                this.displayJoke(randomJoke, new Date(randomJoke.date));
+                this.isToday = randomJoke.date === this.getTodayET();
+                this.updateButtonStates();
             }
 
             displayJoke(joke, date) {
-                // Format date nicely
+                this.currentJoke = joke;
+
                 const options = {
                     weekday: 'long',
                     year: 'numeric',
                     month: 'long',
-                    day: 'numeric'
+                    day: 'numeric',
+                    timeZone: 'America/New_York'
                 };
-                this.dateDisplay.textContent = date.toLocaleDateString('en-US', options);
+                this.dateDisplay.textContent = date.toLocaleDateString('en-US', options) + ' (ET)';
 
-                // Display joke
-                this.jokeContent.textContent = joke.joke;
+                this.jokeText.textContent = joke.joke;
 
-                // Display image if available
-                if (joke.image && !joke.image.includes('placeholder')) {
+                if (joke.image && joke.image.trim()) {
                     this.jokeImage.src = joke.image;
                     this.jokeImage.style.display = 'block';
+                    this.imagePlaceholder.style.display = 'none';
+
+                    this.jokeImage.onerror = () => {
+                        this.jokeImage.style.display = 'none';
+                        this.imagePlaceholder.style.display = 'flex';
+                    };
                 } else {
                     this.jokeImage.style.display = 'none';
-                }
-
-                // Update navigation buttons
-                this.updateNavigationButtons();
-            }
-
-            previousDay() {
-                this.currentDayOffset++;
-                this.loadTodaysJoke();
-            }
-
-            nextDay() {
-                if (this.currentDayOffset > 0) {
-                    this.currentDayOffset--;
-                    this.loadTodaysJoke();
+                    this.imagePlaceholder.style.display = 'flex';
                 }
             }
 
-            updateNavigationButtons() {
-                // Disable next button if we're at today
-                this.nextBtn.disabled = this.currentDayOffset === 0;
-                this.nextBtn.style.opacity = this.currentDayOffset === 0 ? '0.5' : '1';
+            updateButtonStates() {
+                this.todayBtn.classList.toggle('active', this.isToday);
+
+                const hasPrevious = this.currentJoke &&
+                    this.jokes.some(joke => new Date(joke.date) < new Date(this.currentJoke.date));
+                this.prevBtn.disabled = !hasPrevious;
+            }
+
+            getTodayET() {
+                const now = new Date();
+                const etTime = new Date(now.toLocaleString("en-US", {timeZone: "America/New_York"}));
+                return etTime.toISOString().split('T')[0];
             }
         }
 
-        // Initialize the app when page loads
         document.addEventListener('DOMContentLoaded', () => {
-            new DadJokeApp();
+            new JokeManager();
         });
     </script>
 </body>

@@ -1,46 +1,52 @@
 {
   "jokes": [
     {
-      "date": "2025-09-19",
+      "date": "2025-09-22",
       "joke": "Why don't scientists trust atoms? Because they make up everything!",
       "image": "https://storage.googleapis.com/dad-jokes-ai-images-2024/science/V2h5IGRvbi_1758278701254.png",
       "category": "science"
     },
     {
-      "date": "2025-09-18",
+      "date": "2025-09-21",
       "joke": "What do you call a pig that does karate? A pork chop!",
       "image": "https://storage.googleapis.com/dad-jokes-ai-images-2024/wordplay/V2hhdCBkby_1758278680415.png",
       "category": "wordplay"
     },
     {
-      "date": "2025-09-17",
+      "date": "2025-09-20",
       "joke": "What do you call a goat that lip-syncs? Billy Vanilli!",
       "image": "https://storage.googleapis.com/dad-jokes-ai-images-2024/wordplay/V2hhdCBkby_1758278679546.png",
       "category": "wordplay"
     },
     {
-      "date": "2025-09-16",
+      "date": "2025-09-19",
       "joke": "Why don't rulers ever feel short? They always measure up!",
       "image": "https://storage.googleapis.com/dad-jokes-ai-images-2024/best_of_2025/V2h5IGRvbi_1758278689474.png",
       "category": "best_of_2025"
     },
     {
-      "date": "2025-09-14",
+      "date": "2025-09-18",
       "joke": "Why don't steaks ever get cold? They're always well-done!",
       "image": "https://storage.googleapis.com/dad-jokes-ai-images-2024/food/V2h5IGRvbi_1758278666421.png",
       "category": "food"
     },
     {
-      "date": "2025-09-13",
+      "date": "2025-09-17",
       "joke": "I used to be a librarian, but it was too booking!",
       "image": "https://storage.googleapis.com/dad-jokes-ai-images-2024/wordplay/SSB1c2VkIH_1758278668516.png",
       "category": "wordplay"
     },
     {
-      "date": "2025-09-12",
+      "date": "2025-09-16",
       "joke": "Why don't scientists ever get lonely? Because they're always bonding!",
       "image": "https://storage.googleapis.com/dad-jokes-ai-images-2024/science/V2h5IGRvbi_1758278666050.png",
       "category": "science"
     }
-  ]
+  ],
+  "metadata": {
+    "lastGenerated": "2025-09-22T00:00:00Z",
+    "totalJokes": 7,
+    "oldestDate": "2025-09-16",
+    "newestDate": "2025-09-22"
+  }
 }

@@ -1,4 +1,5 @@
 const { GoogleAuth } = require('google-auth-library');
+const fs = require('fs');
 
 // Google Cloud setup
 let auth;
@@ -10,19 +11,30 @@ try {
         throw new Error('GOOGLE_APPLICATION_CREDENTIALS environment variable not found');
     }
 
-    // Parse the credentials from environment variable
-    let credentialsString = process.env.GOOGLE_APPLICATION_CREDENTIALS;
+    const credentialsPath = process.env.GOOGLE_APPLICATION_CREDENTIALS;
 
-    // Handle potential double-encoding or escape characters
-    if (credentialsString.startsWith('"') && credentialsString.endsWith('"')) {
-        credentialsString = credentialsString.slice(1, -1);
+    // Check if it's a file path or JSON string
+    if (credentialsPath.startsWith('/') || credentialsPath.startsWith('./')) {
+        // It's a file path
+        console.log('📁 Loading credentials from file:', credentialsPath);
+        const credentialsContent = fs.readFileSync(credentialsPath, 'utf8');
+        credentials = JSON.parse(credentialsContent);
+    } else {
+        // It's a JSON string
+        console.log('📋 Parsing credentials from environment variable');
+        let credentialsString = credentialsPath;
+
+        // Handle potential double-encoding or escape characters
+        if (credentialsString.startsWith('"') && credentialsString.endsWith('"')) {
+            credentialsString = credentialsString.slice(1, -1);
+        }
+
+        // Replace escaped quotes if present
+        credentialsString = credentialsString.replace(/\\"/g, '"');
+        credentials = JSON.parse(credentialsString);
     }
 
-    // Replace escaped quotes if present
-    credentialsString = credentialsString.replace(/\\"/g, '"');
-
-    credentials = JSON.parse(credentialsString);
-    console.log('✅ Successfully parsed Google Cloud credentials');
+    console.log('✅ Successfully loaded Google Cloud credentials');
 
     // Initialize Google Auth
     auth = new GoogleAuth({
@@ -101,11 +113,17 @@ module.exports = async (req, res) => {
         };
 
         // Make request to Vertex AI
+        console.log('🌐 Making request to:', endpoint);
+        console.log('📝 Request payload:', JSON.stringify(imageRequest, null, 2));
+
         const response = await client.request({
             url: endpoint,
             method: 'POST',
             data: imageRequest
         });
+
+        console.log('📨 Response status:', response.status);
+        console.log('📨 Response data:', JSON.stringify(response.data, null, 2));
 
         if (response.data && response.data.predictions && response.data.predictions[0]) {
             const imageBase64 = response.data.predictions[0].bytesBase64Encoded;
@@ -117,7 +135,8 @@ module.exports = async (req, res) => {
                 prompt: prompt
             });
         } else {
-            throw new Error('No image generated');
+            console.log('⚠️ No predictions in response');
+            throw new Error('No image generated - check response structure');
         }
 
     } catch (error) {
