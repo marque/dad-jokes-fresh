@@ -1,52 +1,562 @@
 {
   "jokes": [
     {
+      "date": "2025-09-23",
+      "joke": "What do you call a fake noodle? An impasta!",
+      "image": "/previews/ghibli-style/preview-2025-09-23.png",
+      "category": "food"
+    },
+    {
       "date": "2025-09-22",
       "joke": "Why don't scientists trust atoms? Because they make up everything!",
-      "image": "https://storage.googleapis.com/dad-jokes-ai-images-2024/science/V2h5IGRvbi_1758278701254.png",
+      "image": "/previews/ghibli-style/preview-2025-09-22.png",
       "category": "science"
     },
     {
       "date": "2025-09-21",
       "joke": "What do you call a pig that does karate? A pork chop!",
-      "image": "https://storage.googleapis.com/dad-jokes-ai-images-2024/wordplay/V2hhdCBkby_1758278680415.png",
+      "image": "/previews/ghibli-style/preview-2025-09-21.png",
       "category": "wordplay"
     },
     {
       "date": "2025-09-20",
       "joke": "What do you call a goat that lip-syncs? Billy Vanilli!",
-      "image": "https://storage.googleapis.com/dad-jokes-ai-images-2024/wordplay/V2hhdCBkby_1758278679546.png",
+      "image": "/previews/ghibli-style/preview-2025-09-20.png",
       "category": "wordplay"
     },
     {
       "date": "2025-09-19",
       "joke": "Why don't rulers ever feel short? They always measure up!",
-      "image": "https://storage.googleapis.com/dad-jokes-ai-images-2024/best_of_2025/V2h5IGRvbi_1758278689474.png",
+      "image": "/previews/ghibli-style/preview-2025-09-19.png",
       "category": "best_of_2025"
     },
     {
       "date": "2025-09-18",
       "joke": "Why don't steaks ever get cold? They're always well-done!",
-      "image": "https://storage.googleapis.com/dad-jokes-ai-images-2024/food/V2h5IGRvbi_1758278666421.png",
+      "image": "/previews/ghibli-style/preview-2025-09-18.png",
       "category": "food"
     },
     {
       "date": "2025-09-17",
       "joke": "I used to be a librarian, but it was too booking!",
-      "image": "https://storage.googleapis.com/dad-jokes-ai-images-2024/wordplay/SSB1c2VkIH_1758278668516.png",
+      "image": "/previews/ghibli-style/preview-2025-09-17.png",
       "category": "wordplay"
     },
     {
       "date": "2025-09-16",
       "joke": "Why don't scientists ever get lonely? Because they're always bonding!",
-      "image": "https://storage.googleapis.com/dad-jokes-ai-images-2024/science/V2h5IGRvbi_1758278666050.png",
+      "image": "/previews/ghibli-style/preview-2025-09-16.png",
       "category": "science"
+    },
+    {
+      "date": "2025-09-15",
+      "joke": "What do you call a bear with no teeth? A gummy bear!",
+      "image": "/previews/ghibli-style/preview-2025-09-15.png",
+      "category": "animals"
+    },
+    {
+      "date": "2025-09-14",
+      "joke": "Why don't eggs tell jokes? They'd crack each other up!",
+      "image": "/previews/ghibli-style/preview-2025-09-14.png",
+      "category": "food"
+    },
+    {
+      "date": "2025-09-13",
+      "joke": "What do you call a fake noodle? An impasta!",
+      "image": "/previews/ghibli-style/preview-2025-09-13.png",
+      "category": "food"
+    },
+    {
+      "date": "2025-09-12",
+      "joke": "Why don't scientists trust stairs? Because they're always up to something!",
+      "image": "/previews/ghibli-style/preview-2025-09-12.png",
+      "category": "wordplay"
+    },
+    {
+      "date": "2025-09-11",
+      "joke": "What do you call a dinosaur that crashes his car? Tyrannosaurus Wrecks!",
+      "image": "/previews/ghibli-style/preview-2025-09-11.png",
+      "category": "animals"
+    },
+    {
+      "date": "2025-09-10",
+      "joke": "Why did the math book look so sad? Because it had too many problems!",
+      "image": "/previews/ghibli-style/preview-2025-09-10.png",
+      "category": "school"
+    },
+    {
+      "date": "2025-09-09",
+      "joke": "What do you call a sleeping bull? A bulldozer!",
+      "image": "/previews/ghibli-style/preview-2025-09-09.png",
+      "category": "animals"
+    },
+    {
+      "date": "2025-09-08",
+      "joke": "Why don't skeletons fight each other? They don't have the guts!",
+      "image": "/previews/ghibli-style/preview-2025-09-08.png",
+      "category": "wordplay"
+    },
+    {
+      "date": "2025-09-07",
+      "joke": "What do you call a fish wearing a crown? A king fish!",
+      "image": "/previews/ghibli-style/preview-2025-09-07.png",
+      "category": "animals"
+    },
+    {
+      "date": "2025-09-06",
+      "joke": "Why did the cookie go to the doctor? Because it felt crumbly!",
+      "image": "/previews/ghibli-style/preview-2025-09-06.png",
+      "category": "food"
+    },
+    {
+      "date": "2025-09-05",
+      "joke": "What do you call a belt made of watches? A waist of time!",
+      "image": "/previews/ghibli-style/preview-2025-09-05.png",
+      "category": "wordplay"
+    },
+    {
+      "date": "2025-09-04",
+      "joke": "Why don't pirates shower before they walk the plank? Because they'll just wash up on shore!",
+      "image": "/previews/ghibli-style/preview-2025-09-04.png",
+      "category": "wordplay"
+    },
+    {
+      "date": "2025-09-03",
+      "joke": "What do you call a cow with no legs? Ground beef!",
+      "image": "/previews/ghibli-style/preview-2025-09-03.png",
+      "category": "animals"
+    },
+    {
+      "date": "2025-09-02",
+      "joke": "Why did the bicycle fall over? Because it was two-tired!",
+      "image": "/previews/ghibli-style/preview-2025-09-02.png",
+      "category": "wordplay"
+    },
+    {
+      "date": "2025-09-01",
+      "joke": "What do you call a dog magician? A labracadabrador!",
+      "image": "/previews/ghibli-style/preview-2025-09-01.png",
+      "category": "animals"
+    },
+    {
+      "date": "2025-08-31",
+      "joke": "Why don't elephants use computers? They're afraid of the mouse!",
+      "image": "/previews/ghibli-style/preview-2025-08-31.png",
+      "category": "technology"
+    },
+    {
+      "date": "2025-08-30",
+      "joke": "What do you call a snowman with a six-pack? An abdominal snowman!",
+      "image": "/previews/ghibli-style/preview-2025-08-30.png",
+      "category": "wordplay"
+    },
+    {
+      "date": "2025-08-29",
+      "joke": "Why did the banana go to the doctor? It wasn't peeling well!",
+      "image": "/previews/ghibli-style/preview-2025-08-29.png",
+      "category": "food"
+    },
+    {
+      "date": "2025-08-28",
+      "joke": "What do you call a fish that needs help with his vocals? Auto-tuna!",
+      "image": "/previews/ghibli-style/preview-2025-08-28.png",
+      "category": "music"
+    },
+    {
+      "date": "2025-08-27",
+      "joke": "Why don't scientists trust atoms? Because they make up everything!",
+      "image": "/previews/ghibli-style/preview-2025-08-27.png",
+      "category": "science"
+    },
+    {
+      "date": "2025-08-26",
+      "joke": "What do you call a cheese that isn't yours? Nacho cheese!",
+      "image": "/previews/ghibli-style/preview-2025-08-26.png",
+      "category": "food"
+    },
+    {
+      "date": "2025-08-25",
+      "joke": "Why did the coffee file a police report? It got mugged!",
+      "image": "/previews/ghibli-style/preview-2025-08-25.png",
+      "category": "food"
+    },
+    {
+      "date": "2025-08-24",
+      "joke": "What do you call a factory that makes good products? A satisfactory!",
+      "image": "/previews/ghibli-style/preview-2025-08-24.png",
+      "category": "wordplay"
+    },
+    {
+      "date": "2025-08-23",
+      "joke": "Why don't programmers like nature? It has too many bugs!",
+      "image": "https://storage.googleapis.com/dad-jokes-ai-images-2024/enhanced/2025-08-23.png",
+      "category": "technology"
+    },
+    {
+      "date": "2025-08-22",
+      "joke": "What do you call a dinosaur that loves to sleep? A dino-snore!",
+      "image": "https://storage.googleapis.com/dad-jokes-ai-images-2024/enhanced/2025-08-22.png",
+      "category": "animals"
+    },
+    {
+      "date": "2025-08-21",
+      "joke": "Why did the scarecrow win an award? Because he was outstanding in his field!",
+      "image": "https://storage.googleapis.com/dad-jokes-ai-images-2024/enhanced/2025-08-21.png",
+      "category": "wordplay"
+    },
+    {
+      "date": "2025-08-20",
+      "joke": "What do you call a bear with no ears? B!",
+      "image": "https://storage.googleapis.com/dad-jokes-ai-images-2024/enhanced/2025-08-20.png",
+      "category": "animals"
+    },
+    {
+      "date": "2025-08-19",
+      "joke": "Why don't scientists trust staircases? Because they're always up to something!",
+      "image": "https://storage.googleapis.com/dad-jokes-ai-images-2024/enhanced/2025-08-19.png",
+      "category": "wordplay"
+    },
+    {
+      "date": "2025-08-18",
+      "joke": "What do you call a fish that wears a crown? King Neptune!",
+      "image": "https://storage.googleapis.com/dad-jokes-ai-images-2024/enhanced/2025-08-18.png",
+      "category": "animals"
+    },
+    {
+      "date": "2025-08-17",
+      "joke": "Why did the cookie go to therapy? It was feeling crumbly inside!",
+      "image": "https://storage.googleapis.com/dad-jokes-ai-images-2024/enhanced/2025-08-17.png",
+      "category": "food"
+    },
+    {
+      "date": "2025-08-16",
+      "joke": "What do you call a sleeping bull in a meadow? A bulldozer taking a nap!",
+      "image": "https://storage.googleapis.com/dad-jokes-ai-images-2024/enhanced/2025-08-16.png",
+      "category": "animals"
+    },
+    {
+      "date": "2025-08-15",
+      "joke": "Why don't eggs ever win at poker? They always crack under pressure!",
+      "image": "https://storage.googleapis.com/dad-jokes-ai-images-2024/enhanced/2025-08-15.png",
+      "category": "food"
+    },
+    {
+      "date": "2025-08-14",
+      "joke": "What do you call a group of disorganized cats? A cat-astrophe!",
+      "image": "https://storage.googleapis.com/dad-jokes-ai-images-2024/enhanced/2025-08-14.png",
+      "category": "animals"
+    },
+    {
+      "date": "2025-08-13",
+      "joke": "Why did the math teacher break up with the biology teacher? There was no chemistry!",
+      "image": "https://storage.googleapis.com/dad-jokes-ai-images-2024/enhanced/2025-08-13.png",
+      "category": "school"
+    },
+    {
+      "date": "2025-08-12",
+      "joke": "What do you call a pig that does karate? A pork chop!",
+      "image": "https://storage.googleapis.com/dad-jokes-ai-images-2024/enhanced/2025-08-12.png",
+      "category": "animals"
+    },
+    {
+      "date": "2025-08-11",
+      "joke": "Why don't skeletons ever pay their bills? They don't have any body to send the money!",
+      "image": "https://storage.googleapis.com/dad-jokes-ai-images-2024/enhanced/2025-08-11.png",
+      "category": "wordplay"
+    },
+    {
+      "date": "2025-08-10",
+      "joke": "What do you call a dinosaur that crashes his spaceship? A tyrannosaurus wrecks!",
+      "image": "https://storage.googleapis.com/dad-jokes-ai-images-2024/enhanced/2025-08-10.png",
+      "category": "animals"
+    },
+    {
+      "date": "2025-08-09",
+      "joke": "Why did the banana go to the doctor? It wasn't peeling well!",
+      "image": "https://storage.googleapis.com/dad-jokes-ai-images-2024/enhanced/2025-08-09.png",
+      "category": "food"
+    },
+    {
+      "date": "2025-08-08",
+      "joke": "What do you call a cow that plays a musical instrument? A moo-sician!",
+      "image": "https://storage.googleapis.com/dad-jokes-ai-images-2024/enhanced/2025-08-08.png",
+      "category": "music"
+    },
+    {
+      "date": "2025-08-07",
+      "joke": "Why don't scientists trust atoms? Because they make up everything!",
+      "image": "https://storage.googleapis.com/dad-jokes-ai-images-2024/enhanced/2025-08-07.png",
+      "category": "science"
+    },
+    {
+      "date": "2025-08-06",
+      "joke": "What do you call a belt made out of watches? A waist of time!",
+      "image": "https://storage.googleapis.com/dad-jokes-ai-images-2024/enhanced/2025-08-06.png",
+      "category": "wordplay"
+    },
+    {
+      "date": "2025-08-05",
+      "joke": "Why did the coffee file a police report? It got mugged every morning!",
+      "image": "https://storage.googleapis.com/dad-jokes-ai-images-2024/enhanced/2025-08-05.png",
+      "category": "food"
+    },
+    {
+      "date": "2025-08-04",
+      "joke": "What do you call a fish wearing a crown and a cape? Your royal high-ness!",
+      "image": "https://storage.googleapis.com/dad-jokes-ai-images-2024/enhanced/2025-08-04.png",
+      "category": "animals"
+    },
+    {
+      "date": "2025-08-03",
+      "joke": "Why don't elephants use computers? They're afraid of the mouse!",
+      "image": "https://storage.googleapis.com/dad-jokes-ai-images-2024/enhanced/2025-08-03.png",
+      "category": "technology"
+    },
+    {
+      "date": "2025-08-02",
+      "joke": "What do you call a snowman with a six-pack? An abdominal snowman!",
+      "image": "https://storage.googleapis.com/dad-jokes-ai-images-2024/enhanced/2025-08-02.png",
+      "category": "wordplay"
+    },
+    {
+      "date": "2025-08-01",
+      "joke": "Why did the bicycle fall over? Because it was two-tired!",
+      "image": "https://storage.googleapis.com/dad-jokes-ai-images-2024/enhanced/2025-08-01.png",
+      "category": "wordplay"
+    },
+    {
+      "date": "2025-07-31",
+      "joke": "What do you call a dog magician? A labracadabrador!",
+      "image": "https://storage.googleapis.com/dad-jokes-ai-images-2024/enhanced/2025-07-31.png",
+      "category": "animals"
+    },
+    {
+      "date": "2025-07-30",
+      "joke": "Why don't scientists trust stairs? Because they're always up to something!",
+      "image": "https://storage.googleapis.com/dad-jokes-ai-images-2024/enhanced/2025-07-30.png",
+      "category": "wordplay"
+    },
+    {
+      "date": "2025-07-29",
+      "joke": "What do you call a fake noodle? An impasta chef!",
+      "image": "https://storage.googleapis.com/dad-jokes-ai-images-2024/enhanced/2025-07-29.png",
+      "category": "food"
+    },
+    {
+      "date": "2025-07-28",
+      "joke": "Why did the tomato turn red? Because it saw the salad dressing!",
+      "image": "https://storage.googleapis.com/dad-jokes-ai-images-2024/enhanced/2025-07-28.png",
+      "category": "food"
+    },
+    {
+      "date": "2025-07-27",
+      "joke": "What do you call a sleeping bull? A bulldozer!",
+      "image": "https://storage.googleapis.com/dad-jokes-ai-images-2024/enhanced/2025-07-27.png",
+      "category": "animals"
+    },
+    {
+      "date": "2025-07-26",
+      "joke": "Why don't eggs tell jokes? They'd crack each other up!",
+      "image": "https://storage.googleapis.com/dad-jokes-ai-images-2024/enhanced/2025-07-26.png",
+      "category": "food"
+    },
+    {
+      "date": "2025-07-25",
+      "joke": "What do you call a bear with no teeth? A gummy bear!",
+      "image": "https://storage.googleapis.com/dad-jokes-ai-images-2024/enhanced/2025-07-25.png",
+      "category": "animals"
+    },
+    {
+      "date": "2025-07-24",
+      "joke": "Why don't scientists ever get lonely? Because they're always bonding!",
+      "image": "https://storage.googleapis.com/dad-jokes-ai-images-2024/enhanced/2025-07-24.png",
+      "category": "science"
+    },
+    {
+      "date": "2025-07-23",
+      "joke": "What do you call a fish that needs help with his vocals? Auto-tuna!",
+      "image": "https://storage.googleapis.com/dad-jokes-ai-images-2024/enhanced/2025-07-23.png",
+      "category": "music"
+    },
+    {
+      "date": "2025-07-22",
+      "joke": "Why did the cookie go to the doctor? Because it felt crumbly!",
+      "image": "https://storage.googleapis.com/dad-jokes-ai-images-2024/enhanced/2025-07-22.png",
+      "category": "food"
+    },
+    {
+      "date": "2025-07-21",
+      "joke": "What do you call a cow with no legs? Ground beef!",
+      "image": "https://storage.googleapis.com/dad-jokes-ai-images-2024/enhanced/2025-07-21.png",
+      "category": "animals"
+    },
+    {
+      "date": "2025-07-20",
+      "joke": "Why don't pirates shower before they walk the plank? Because they'll just wash up on shore!",
+      "image": "https://storage.googleapis.com/dad-jokes-ai-images-2024/enhanced/2025-07-20.png",
+      "category": "wordplay"
+    },
+    {
+      "date": "2025-07-19",
+      "joke": "What do you call a belt made of watches? A waist of time!",
+      "image": "https://storage.googleapis.com/dad-jokes-ai-images-2024/enhanced/2025-07-19.png",
+      "category": "wordplay"
+    },
+    {
+      "date": "2025-07-18",
+      "joke": "Why don't skeletons fight each other? They don't have the guts!",
+      "image": "https://storage.googleapis.com/dad-jokes-ai-images-2024/enhanced/2025-07-18.png",
+      "category": "wordplay"
+    },
+    {
+      "date": "2025-07-17",
+      "joke": "What do you call a fish wearing a crown? A king fish!",
+      "image": "https://storage.googleapis.com/dad-jokes-ai-images-2024/enhanced/2025-07-17.png",
+      "category": "animals"
+    },
+    {
+      "date": "2025-07-16",
+      "joke": "Why did the math book look so sad? Because it had too many problems!",
+      "image": "https://storage.googleapis.com/dad-jokes-ai-images-2024/enhanced/2025-07-16.png",
+      "category": "school"
+    },
+    {
+      "date": "2025-07-15",
+      "joke": "What do you call a dinosaur that crashes his car? Tyrannosaurus Wrecks!",
+      "image": "https://storage.googleapis.com/dad-jokes-ai-images-2024/enhanced/2025-07-15.png",
+      "category": "animals"
+    },
+    {
+      "date": "2025-07-14",
+      "joke": "Why don't scientists trust stairs? Because they're always up to something!",
+      "image": "https://storage.googleapis.com/dad-jokes-ai-images-2024/enhanced/2025-07-14.png",
+      "category": "wordplay"
+    },
+    {
+      "date": "2025-07-13",
+      "joke": "What do you call a cheese that isn't yours? Nacho cheese!",
+      "image": "https://storage.googleapis.com/dad-jokes-ai-images-2024/enhanced/2025-07-13.png",
+      "category": "food"
+    },
+    {
+      "date": "2025-07-12",
+      "joke": "Why did the banana go to the doctor? It wasn't peeling well!",
+      "image": "https://storage.googleapis.com/dad-jokes-ai-images-2024/enhanced/2025-07-12.png",
+      "category": "food"
+    },
+    {
+      "date": "2025-07-11",
+      "joke": "What do you call a fish that needs help with his vocals? Auto-tuna!",
+      "image": "https://storage.googleapis.com/dad-jokes-ai-images-2024/enhanced/2025-07-11.png",
+      "category": "music"
+    },
+    {
+      "date": "2025-07-10",
+      "joke": "Why don't scientists trust atoms? Because they make up everything!",
+      "image": "https://storage.googleapis.com/dad-jokes-ai-images-2024/enhanced/2025-07-10.png",
+      "category": "science"
+    },
+    {
+      "date": "2025-07-09",
+      "joke": "What do you call a factory that makes good products? A satisfactory!",
+      "image": "https://storage.googleapis.com/dad-jokes-ai-images-2024/enhanced/2025-07-09.png",
+      "category": "wordplay"
+    },
+    {
+      "date": "2025-07-08",
+      "joke": "Why did the coffee file a police report? It got mugged!",
+      "image": "https://storage.googleapis.com/dad-jokes-ai-images-2024/enhanced/2025-07-08.png",
+      "category": "food"
+    },
+    {
+      "date": "2025-07-07",
+      "joke": "What do you call a sleeping bull? A bulldozer!",
+      "image": "https://storage.googleapis.com/dad-jokes-ai-images-2024/enhanced/2025-07-07.png",
+      "category": "animals"
+    },
+    {
+      "date": "2025-07-06",
+      "joke": "Why don't eggs tell jokes? They'd crack each other up!",
+      "image": "https://storage.googleapis.com/dad-jokes-ai-images-2024/enhanced/2025-07-06.png",
+      "category": "food"
+    },
+    {
+      "date": "2025-07-05",
+      "joke": "What do you call a bear with no teeth? A gummy bear!",
+      "image": "https://storage.googleapis.com/dad-jokes-ai-images-2024/enhanced/2025-07-05.png",
+      "category": "animals"
+    },
+    {
+      "date": "2025-07-04",
+      "joke": "Why don't scientists ever get lonely? Because they're always bonding!",
+      "image": "https://storage.googleapis.com/dad-jokes-ai-images-2024/enhanced/2025-07-04.png",
+      "category": "science"
+    },
+    {
+      "date": "2025-07-03",
+      "joke": "What do you call a dog magician? A labracadabrador!",
+      "image": "https://storage.googleapis.com/dad-jokes-ai-images-2024/enhanced/2025-07-03.png",
+      "category": "animals"
+    },
+    {
+      "date": "2025-07-02",
+      "joke": "Why don't elephants use computers? They're afraid of the mouse!",
+      "image": "https://storage.googleapis.com/dad-jokes-ai-images-2024/enhanced/2025-07-02.png",
+      "category": "technology"
+    },
+    {
+      "date": "2025-07-01",
+      "joke": "What do you call a snowman with a six-pack? An abdominal snowman!",
+      "image": "https://storage.googleapis.com/dad-jokes-ai-images-2024/enhanced/2025-07-01.png",
+      "category": "wordplay"
+    },
+    {
+      "date": "2025-06-30",
+      "joke": "Why did the bicycle fall over? Because it was two-tired!",
+      "image": "https://storage.googleapis.com/dad-jokes-ai-images-2024/enhanced/2025-06-30.png",
+      "category": "wordplay"
+    },
+    {
+      "date": "2025-06-29",
+      "joke": "What do you call a fake noodle? An impasta!",
+      "image": "https://storage.googleapis.com/dad-jokes-ai-images-2024/enhanced/2025-06-29.png",
+      "category": "food"
+    },
+    {
+      "date": "2025-06-28",
+      "joke": "Why don't scientists trust stairs? Because they're always up to something!",
+      "image": "https://storage.googleapis.com/dad-jokes-ai-images-2024/enhanced/2025-06-28.png",
+      "category": "wordplay"
+    },
+    {
+      "date": "2025-06-27",
+      "joke": "What do you call a cow with no legs? Ground beef!",
+      "image": "/previews/ghibli-style/preview-2025-06-27.png",
+      "category": "animals"
+    },
+    {
+      "date": "2025-06-26",
+      "joke": "Why don't pirates shower before they walk the plank? Because they'll just wash up on shore!",
+      "image": "/previews/ghibli-style/preview-2025-06-26.png",
+      "category": "wordplay"
+    },
+    {
+      "date": "2025-06-25",
+      "joke": "What do you call a belt made of watches? A waist of time!",
+      "image": "/previews/ghibli-style/preview-2025-06-25.png",
+      "category": "wordplay"
+    },
+    {
+      "date": "2025-06-24",
+      "joke": "Why don't skeletons fight each other? They don't have the guts!",
+      "image": "/previews/ghibli-style/preview-2025-06-24.png",
+      "category": "wordplay"
     }
   ],
   "metadata": {
-    "lastGenerated": "2025-09-22T00:00:00Z",
-    "totalJokes": 7,
-    "oldestDate": "2025-09-16",
-    "newestDate": "2025-09-22"
+    "lastGenerated": "2025-09-23T00:00:00Z",
+    "totalJokes": 92,
+    "oldestDate": "2025-06-24",
+    "newestDate": "2025-09-23"
   }
 }

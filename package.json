@@ -7,7 +7,9 @@
     "dev": "node server.js",
     "start": "node server.js",
     "test-image": "node test-image-generation.js",
-    "generate-jokes": "node scripts/generate-batch.js"
+    "generate-jokes": "node scripts/generate-batch.js",
+    "replace-image": "node replace-image.js",
+    "review-images": "node review-images.js"
   },
   "dependencies": {
     "google-auth-library": "^9.0.0",

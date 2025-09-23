@@ -94,8 +94,19 @@ module.exports = async (req, res) => {
         const client = await auth.getClient();
         console.log('✅ Google Auth client obtained');
 
-        // Vertex AI Imagen 3 endpoint
-        const endpoint = `https://${location}-aiplatform.googleapis.com/v1/projects/${projectId}/locations/${location}/publishers/google/models/imagegeneration:predict`;
+        // Multiple endpoints to try for quota distribution
+        const endpoints = [
+            // Different regions
+            `https://aiplatform.googleapis.com/v1/projects/${projectId}/locations/us-central1/publishers/google/models/imagen-3.0-generate-001:predict`,
+            `https://aiplatform.googleapis.com/v1/projects/${projectId}/locations/us-east1/publishers/google/models/imagen-3.0-generate-001:predict`,
+            `https://aiplatform.googleapis.com/v1/projects/${projectId}/locations/us-west1/publishers/google/models/imagen-3.0-generate-001:predict`,
+            `https://aiplatform.googleapis.com/v1/projects/${projectId}/locations/europe-west4/publishers/google/models/imagen-3.0-generate-001:predict`,
+            // Different models
+            `https://aiplatform.googleapis.com/v1/projects/${projectId}/locations/us-central1/publishers/google/models/imagen-3.0-fast-generate-001:predict`,
+            `https://aiplatform.googleapis.com/v1/projects/${projectId}/locations/us-east1/publishers/google/models/imagen-3.0-fast-generate-001:predict`,
+        ];
+
+        let endpoint = endpoints[0];
 
         // Imagen 3 request
         const imageRequest = {
@@ -108,19 +119,48 @@ module.exports = async (req, res) => {
                 sampleCount: 1,
                 aspectRatio: "1:1",
                 safetyFilterLevel: "block_few",
-                personGeneration: "dont_allow"
+                personGeneration: "dont_allow",
+                includeRaiReason: false,
+                addWatermark: false
             }
         };
 
-        // Make request to Vertex AI
-        console.log('🌐 Making request to:', endpoint);
-        console.log('📝 Request payload:', JSON.stringify(imageRequest, null, 2));
+        // Try multiple endpoints if quota is exceeded
+        let response;
+        let lastError;
 
-        const response = await client.request({
-            url: endpoint,
-            method: 'POST',
-            data: imageRequest
-        });
+        for (let i = 0; i < endpoints.length; i++) {
+            endpoint = endpoints[i];
+
+            try {
+                console.log(`🌐 Making request to (attempt ${i + 1}/${endpoints.length}):`, endpoint);
+                console.log('📝 Request payload:', JSON.stringify(imageRequest, null, 2));
+
+                response = await client.request({
+                    url: endpoint,
+                    method: 'POST',
+                    data: imageRequest
+                });
+
+                // If successful, break out of the loop
+                if (response.data && response.data.predictions && response.data.predictions[0]) {
+                    break;
+                }
+
+            } catch (error) {
+                lastError = error;
+                console.log(`❌ Attempt ${i + 1} failed:`, error.message);
+
+                // If it's a quota error and we have more endpoints to try, continue
+                if (error.message.includes('Quota exceeded') && i < endpoints.length - 1) {
+                    console.log(`🔄 Trying next endpoint...`);
+                    continue;
+                }
+
+                // If it's not a quota error or we're out of endpoints, throw
+                throw error;
+            }
+        }
 
         console.log('📨 Response status:', response.status);
         console.log('📨 Response data:', JSON.stringify(response.data, null, 2));
