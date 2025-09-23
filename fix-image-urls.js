@@ -13,10 +13,10 @@ const fixImageUrls = () => {
     jokesData.jokes.forEach(joke => {
         if (joke.image && joke.image.includes('storage.googleapis.com')) {
             // Check if local preview file exists
-            const localImagePath = `./previews/ghibli-style/preview-${joke.date}.png`;
+            const localImagePath = `./previews/images/preview-${joke.date}.png`;
             if (fs.existsSync(localImagePath)) {
                 // Update to local preview URL
-                joke.image = `./previews/ghibli-style/preview-${joke.date}.png`;
+                joke.image = `./previews/images/preview-${joke.date}.png`;
                 updatedCount++;
                 console.log(`✅ Updated ${joke.date}: ${joke.joke.substring(0, 50)}...`);
             } else {

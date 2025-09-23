@@ -12,7 +12,7 @@ const batchGenerateImages = async () => {
 
     // Find jokes that don't have generated images yet
     for (const joke of jokesData.jokes) {
-        const imagePath = `./previews/ghibli-style/preview-${joke.date}.png`;
+        const imagePath = `./previews/images/preview-${joke.date}.png`;
         if (!fs.existsSync(imagePath)) {
             jokesToProcess.push(joke.date);
         }

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daily Jokes</title>
+    <title>Daily Dad Jokes</title>
     <style>
         * {
             margin: 0;
@@ -77,6 +77,14 @@
             color: #2d3748;
             margin-bottom: 10px;
             font-weight: 700;
+            text-shadow: none;
+        }
+
+        .joke-count {
+            color: #667eea;
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+            font-weight: 600;
             text-shadow: none;
         }
 
@@ -236,7 +244,8 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1 class="title">Daily Jokes</h1>
+            <h1 class="title">Daily Dad Jokes</h1>
+            <div class="joke-count" id="joke-count">📊 92 jokes and counting!</div>
             <div class="date-display" id="date-display">Loading...</div>
         </div>
 
@@ -253,7 +262,7 @@
     <div class="navigation">
         <button class="nav-btn" id="today-btn">Today</button>
         <button class="nav-btn" id="prev-btn">← Previous Day</button>
-        <button class="nav-btn" id="random-btn">🎲 Random Day</button>
+        <button class="nav-btn" id="random-btn">🍀 Lucky Day</button>
     </div>
 
     <script>
@@ -263,6 +272,7 @@
                 this.jokeImage = document.getElementById('joke-image');
                 this.imagePlaceholder = document.getElementById('image-placeholder');
                 this.dateDisplay = document.getElementById('date-display');
+                this.jokeCount = document.getElementById('joke-count');
                 this.todayBtn = document.getElementById('today-btn');
                 this.prevBtn = document.getElementById('prev-btn');
                 this.randomBtn = document.getElementById('random-btn');
@@ -291,6 +301,7 @@
                     const response = await fetch('/api/daily-jokes');
                     const data = await response.json();
                     this.jokes = data.jokes || [];
+                    this.updateJokeCount();
                 } catch (error) {
                     console.error('Error loading jokes:', error);
                     this.jokes = [{
@@ -299,7 +310,13 @@
                         image: "",
                         category: "science"
                     }];
+                    this.updateJokeCount();
                 }
+            }
+
+            updateJokeCount() {
+                const count = this.jokes.length;
+                this.jokeCount.textContent = `📊 ${count} jokes and counting!`;
             }
 
             showTodaysJoke() {

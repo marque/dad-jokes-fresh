@@ -49,11 +49,11 @@ const replaceJokeImage = async (jokeDate, customPrompt = null) => {
                 if (data.imageUrl.startsWith('data:image')) {
                     const base64Data = data.imageUrl.replace(/^data:image\/png;base64,/, '');
                     // Create previews directory if it doesn't exist
-                    if (!fs.existsSync('./previews/ghibli-style')) {
-                        fs.mkdirSync('./previews/ghibli-style', { recursive: true });
+                    if (!fs.existsSync('./previews/images')) {
+                        fs.mkdirSync('./previews/images', { recursive: true });
                     }
-                    fs.writeFileSync(`./previews/ghibli-style/preview-${jokeDate}.png`, base64Data, 'base64');
-                    console.log(`💾 Preview saved as previews/ghibli-style/preview-${jokeDate}.png`);
+                    fs.writeFileSync(`./previews/images/preview-${jokeDate}.png`, base64Data, 'base64');
+                    console.log(`💾 Preview saved as previews/images/preview-${jokeDate}.png`);
                 }
             } else {
                 console.log('⚠️  Image generation failed:', data.error);
