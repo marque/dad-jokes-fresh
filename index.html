@@ -217,6 +217,10 @@
             font-style: italic;
         }
 
+        .btn-text-mobile {
+            display: none;
+        }
+
         @media (max-width: 480px) {
             .container {
                 padding: 30px 20px;
@@ -231,14 +235,23 @@
             }
 
             .navigation {
-                gap: 8px;
+                gap: 6px;
+                flex-wrap: wrap;
             }
 
             .nav-btn {
                 flex: 1;
-                min-width: 0;
-                font-size: 0.85rem;
-                padding: 10px 8px;
+                min-width: 80px;
+                font-size: 0.9rem;
+                padding: 12px 8px;
+            }
+
+            .btn-text-desktop {
+                display: none;
+            }
+
+            .btn-text-mobile {
+                display: inline;
             }
         }
     </style>
@@ -262,9 +275,18 @@
     </div>
 
     <div class="navigation">
-        <button class="nav-btn" id="today-btn">Today</button>
-        <button class="nav-btn" id="prev-btn">← Previous Day</button>
-        <button class="nav-btn" id="random-btn">🍀 Lucky Day</button>
+        <button class="nav-btn" id="today-btn">
+            <span class="btn-text-desktop">Today</span>
+            <span class="btn-text-mobile">Today</span>
+        </button>
+        <button class="nav-btn" id="prev-btn">
+            <span class="btn-text-desktop">← Previous Day</span>
+            <span class="btn-text-mobile">← Prev</span>
+        </button>
+        <button class="nav-btn" id="random-btn">
+            <span class="btn-text-desktop">🍀 Lucky Day</span>
+            <span class="btn-text-mobile">🍀 Lucky</span>
+        </button>
     </div>
 
     <script>
