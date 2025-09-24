@@ -236,14 +236,19 @@
 
             .navigation {
                 gap: 6px;
-                flex-wrap: wrap;
+                flex-wrap: nowrap;
+                bottom: 15px;
+                width: calc(100% - 40px);
+                max-width: none;
             }
 
             .nav-btn {
                 flex: 1;
-                min-width: 80px;
-                font-size: 0.9rem;
-                padding: 12px 8px;
+                min-width: 0;
+                max-width: none;
+                font-size: 0.85rem;
+                padding: 10px 6px;
+                white-space: nowrap;
             }
 
             .btn-text-desktop {
