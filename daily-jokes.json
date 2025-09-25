@@ -1,6 +1,18 @@
 {
   "jokes": [
     {
+      "date": "2025-09-25",
+      "joke": "What do you call a penguin wearing headphones? Anything you want, it can't hear you!",
+      "image": "https://storage.googleapis.com/dad-jokes-ai-images-2024/enhanced/2025-09-25.png",
+      "category": "animals"
+    },
+    {
+      "date": "2025-09-26",
+      "joke": "What do you call a bear that's good at archery? Robin Bear!",
+      "image": "https://storage.googleapis.com/dad-jokes-ai-images-2024/enhanced/2025-09-26.png",
+      "category": "animals"
+    },
+    {
       "date": "2025-09-24",
       "joke": "What do you call a pig that's good at archery? A pork-cupine!",
       "image": "https://storage.googleapis.com/dad-jokes-ai-images-2024/enhanced/2025-09-24.png",
@@ -560,10 +572,10 @@
     }
   ],
   "metadata": {
-    "lastGenerated": "2025-09-23T20:36:28.244Z",
-    "totalJokes": 93,
+    "lastGenerated": "2025-09-25T21:08:43.055Z",
+    "totalJokes": 95,
     "oldestDate": "2025-06-24",
-    "newestDate": "2025-09-24",
-    "lastUpdated": "2025-09-23T21:12:17.794Z"
+    "newestDate": "2025-09-25",
+    "lastUpdated": "2025-09-25T21:13:26.291Z"
   }
 }

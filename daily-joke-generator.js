@@ -4,6 +4,10 @@ const { replaceJokeImage } = require('./replace-image');
 
 // AI-powered joke generation using OpenAI (you can switch to another AI service)
 const generateDadJoke = async () => {
+    // Load existing jokes to avoid duplicates
+    const jokesData = JSON.parse(fs.readFileSync('./daily-jokes.json', 'utf8'));
+    const existingJokes = jokesData.jokes.map(j => j.joke.toLowerCase());
+
     // For now, we'll use a curated list of fresh dad jokes
     // In production, you could integrate with OpenAI GPT or another AI service
     const freshJokes = [
@@ -29,9 +33,47 @@ const generateDadJoke = async () => {
         { joke: "What do you call a cow that's good at detective work? Sherlock Moos!", category: "animals" }
     ];
 
-    // Select a random joke
-    const randomIndex = Math.floor(Math.random() * freshJokes.length);
-    return freshJokes[randomIndex];
+    // Filter out jokes that already exist (exact matches or very similar)
+    const availableJokes = freshJokes.filter(candidate => {
+        const candidateLower = candidate.joke.toLowerCase();
+
+        // Check for exact matches
+        if (existingJokes.some(existing => existing === candidateLower)) {
+            console.log(`⚠️ Skipping exact duplicate: "${candidate.joke}"`);
+            return false;
+        }
+
+        // Check for similar jokes by looking for matching key phrases
+        const candidateWords = candidateLower.replace(/[!?.,]/g, '').split(' ');
+        const lastThreeWords = candidateWords.slice(-3).join(' ');
+
+        const isSimilar = existingJokes.some(existing => {
+            const existingWords = existing.replace(/[!?.,]/g, '').split(' ');
+            const existingLastThree = existingWords.slice(-3).join(' ');
+
+            // Check if punchlines are similar
+            return lastThreeWords === existingLastThree ||
+                   existing.includes(lastThreeWords) ||
+                   candidateLower.includes(existingLastThree);
+        });
+
+        if (isSimilar) {
+            console.log(`⚠️ Skipping similar joke: "${candidate.joke}"`);
+            return false;
+        }
+
+        return true;
+    });
+
+    if (availableJokes.length === 0) {
+        throw new Error('No unique jokes available! Need to add more jokes to the pool.');
+    }
+
+    console.log(`✅ Found ${availableJokes.length} unique jokes out of ${freshJokes.length} total`);
+
+    // Select a random unique joke
+    const randomIndex = Math.floor(Math.random() * availableJokes.length);
+    return availableJokes[randomIndex];
 };
 
 const getNextDate = () => {
