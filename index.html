@@ -88,11 +88,40 @@
             text-shadow: none;
         }
 
-        .date-display {
-            color: #4a5568;
-            font-size: 0.95rem;
-            margin-bottom: 20px;
+        .footer {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .footer .joke-count {
+            color: #667eea;
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+            font-weight: 600;
             text-shadow: none;
+        }
+
+        .footer .date-display {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: #4a5568;
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-shadow: none;
+            position: relative;
+            display: inline-block;
+        }
+
+        .footer .date-display::before {
+            content: '📅';
+            margin-right: 8px;
+            -webkit-text-fill-color: initial;
+            color: #667eea;
         }
 
         .image-container {
@@ -265,8 +294,6 @@
     <div class="container">
         <div class="header">
             <h1 class="title">Daily Dad Jokes</h1>
-            <div class="joke-count" id="joke-count">📊 92 jokes and counting!</div>
-            <div class="date-display" id="date-display">Loading...</div>
         </div>
 
         <div class="image-container">
@@ -276,6 +303,11 @@
 
         <div class="joke-container">
             <div class="joke-text" id="joke-text">Loading your daily joke...</div>
+        </div>
+
+        <div class="footer">
+            <div class="joke-count" id="joke-count">📊 92 jokes and counting!</div>
+            <div class="date-display" id="date-display">Loading...</div>
         </div>
     </div>
 
