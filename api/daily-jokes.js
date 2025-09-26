@@ -19,7 +19,7 @@ module.exports = async (req, res) => {
         const fileContent = fs.readFileSync(filePath, 'utf8');
         const jokesData = JSON.parse(fileContent);
 
-        res.setHeader('Cache-Control', 'public, max-age=300');
+        res.setHeader('Cache-Control', 'public, max-age=60');
         res.json(jokesData);
 
     } catch (error) {
