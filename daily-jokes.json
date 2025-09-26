@@ -1,16 +1,16 @@
 {
   "jokes": [
     {
-      "date": "2025-09-25",
-      "joke": "What do you call a penguin wearing headphones? Anything you want, it can't hear you!",
-      "image": "https://storage.googleapis.com/dad-jokes-ai-images-2024/enhanced/2025-09-25.png",
-      "category": "animals"
-    },
-    {
       "date": "2025-09-26",
       "joke": "Why don't calculators ever get stressed? They always count on themselves!",
       "image": "https://storage.googleapis.com/dad-jokes-ai-images-2024/enhanced/2025-09-26.png",
       "category": "wordplay"
+    },
+    {
+      "date": "2025-09-25",
+      "joke": "What do you call a penguin wearing headphones? Anything you want, it can't hear you!",
+      "image": "https://storage.googleapis.com/dad-jokes-ai-images-2024/enhanced/2025-09-25.png",
+      "category": "animals"
     },
     {
       "date": "2025-09-24",
@@ -575,7 +575,7 @@
     "lastGenerated": "2025-09-25T21:08:43.055Z",
     "totalJokes": 95,
     "oldestDate": "2025-06-24",
-    "newestDate": "2025-09-25",
+    "newestDate": "2025-09-26",
     "lastUpdated": "2025-09-25T21:13:26.291Z"
   }
 }
