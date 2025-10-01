@@ -77,6 +77,11 @@ const generateDadJoke = async () => {
 };
 
 const getNextDate = () => {
+    // Check if JOKE_DATE environment variable is set
+    if (process.env.JOKE_DATE) {
+        return process.env.JOKE_DATE;
+    }
+
     const tomorrow = new Date();
     tomorrow.setDate(tomorrow.getDate() + 1);
     return tomorrow.toISOString().split('T')[0];

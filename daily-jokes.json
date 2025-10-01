@@ -1,6 +1,30 @@
 {
   "jokes": [
     {
+      "date": "2025-09-29",
+      "joke": "Why don't doors ever get tired? They're always opening new opportunities!",
+      "image": "https://storage.googleapis.com/dad-jokes-ai-images-2024/enhanced/2025-09-29.png",
+      "category": "wordplay"
+    },
+    {
+      "date": "2025-09-28",
+      "joke": "What do you call a fish that's good at basketball? A slam-dunk-fish!",
+      "image": "https://storage.googleapis.com/dad-jokes-ai-images-2024/enhanced/2025-09-28.png",
+      "category": "sports"
+    },
+    {
+      "date": "2025-10-02",
+      "joke": "Why did the phone go to the doctor? It had a bad connection!",
+      "image": "https://storage.googleapis.com/dad-jokes-ai-images-2024/enhanced/2025-10-02.png",
+      "category": "technology"
+    },
+    {
+      "date": "2025-10-01",
+      "joke": "Why did the clock go to therapy? It had too much time on its hands!",
+      "image": "https://storage.googleapis.com/dad-jokes-ai-images-2024/enhanced/2025-10-01.png",
+      "category": "wordplay"
+    },
+    {
       "date": "2025-09-27",
       "joke": "Why don't keyboards ever get lost? They always know their way around!",
       "image": "https://storage.googleapis.com/dad-jokes-ai-images-2024/enhanced/2025-09-27.png",
@@ -578,10 +602,10 @@
     }
   ],
   "metadata": {
-    "lastGenerated": "2025-09-26T15:06:08.038Z",
-    "totalJokes": 96,
+    "lastGenerated": "2025-10-01T15:01:54.591Z",
+    "totalJokes": 100,
     "oldestDate": "2025-06-24",
-    "newestDate": "2025-09-27",
+    "newestDate": "2025-09-29",
     "lastUpdated": "2025-09-25T21:13:26.291Z"
   }
 }
